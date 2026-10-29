@@ -22,6 +22,7 @@ export async function POST(request: Request) {
       const response = await fetch(webhook, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        redirect: 'follow',
         body: JSON.stringify({
           Date: new Date().toISOString(),
           Country: country,
