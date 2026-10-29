@@ -471,7 +471,7 @@ export default function HomeHub({ region, brand, openLead }: HubProps) {
                       <div
                         key={row.name}
                         className="table-row"
-                        style={highlighted ? { background: 'oklch(0.93 0.05 258)', borderLeft: '4px solid var(--brand)' } : undefined}
+                        style={highlighted ? { background: 'var(--brand-light)', borderLeft: '4px solid var(--brand)' } : undefined}
                       >
                         <div>
                           <strong>{row.name}</strong>
@@ -509,7 +509,7 @@ export default function HomeHub({ region, brand, openLead }: HubProps) {
                       <div
                         key={row.name}
                         className="table-row"
-                        style={highlighted ? { background: 'oklch(0.93 0.05 258)', borderLeft: '4px solid var(--brand)' } : undefined}
+                        style={highlighted ? { background: 'var(--brand-light)', borderLeft: '4px solid var(--brand)' } : undefined}
                       >
                         <div>
                           <strong>{row.name}</strong>

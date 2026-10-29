@@ -255,7 +255,7 @@ export default function WealthHub({ region, brand, openLead }: HubProps) {
                   <div
                     className="table-row"
                     key={broker.name}
-                    style={highlighted ? { background: 'oklch(0.93 0.05 258)', borderLeft: '4px solid var(--brand)' } : undefined}
+                    style={highlighted ? { background: 'var(--brand-light)', borderLeft: '4px solid var(--brand)' } : undefined}
                   >
                     <div>
                       <strong>{broker.name}</strong>
