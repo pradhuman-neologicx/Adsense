@@ -143,7 +143,7 @@ function PortalInner() {
           <span className="campaign-bar-label">
             <Sparkles size={13} /> Trending Comparisons:
           </span>
-          <div className="campaign-pills flex-wrap">
+          <div className="campaign-pills">
             {campaignPills.map(pill => {
               const isActive =
                 (pill.brand === '' && !activeBrand && activeHub === pill.hub) ||
