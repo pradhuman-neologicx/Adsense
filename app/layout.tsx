@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'CompareGrid — Compare Cards, Investments, Tech & Home Costs',
+  title: 'WiseGrid — Compare Cards, Investments, Tech & Home Costs',
   description: 'Independent comparison portal for credit cards, brokerage fees, enterprise tech pricing, and home interior costs. Serving US & India.',
   generator: 'Next.js',
   icons: {

@@ -30,7 +30,7 @@ export function Footer({ showDisclaimerBanner = true }: FooterProps) {
             <div className="brand-mark-icon">
               <BarChart3 size={16} strokeWidth={2.4} />
             </div>
-            <span>Compare<span className="brand-dot">.</span>Grid</span>
+            <span>Wise<span className="brand-dot">.</span>Grid</span>
           </Link>
           <p>
             Independent consumer comparison &amp; interactive financial, tech, and home calculators for the United States &amp; India.
@@ -46,7 +46,7 @@ export function Footer({ showDisclaimerBanner = true }: FooterProps) {
           <Link href="/terms">Terms of Service</Link>
         </div>
 
-        <span className="footer-copy">© 2026 CompareGrid. All rights reserved.</span>
+        <span className="footer-copy">© 2026 WiseGrid. All rights reserved.</span>
       </footer>
     </>
   )

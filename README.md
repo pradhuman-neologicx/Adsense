@@ -1,4 +1,4 @@
-# CompareGrid — Safe Multi-Vertical Lead Gen & Brand Keyword Portal (US + India)
+# WiseGrid — Safe Multi-Vertical Lead Gen & Brand Keyword Portal (US + India)
 
 An independent consumer comparison, financial calculator, and enterprise quotation portal inspired by **NerdWallet**, **Bankrate**, and **CNET**. Built according to the **Safe Multi-Vertical Lead Gen & Brand Keyword Blueprint** for high-commercial-intent Google Ads campaigns across the United States ($ USD) and India (₹ INR).
 

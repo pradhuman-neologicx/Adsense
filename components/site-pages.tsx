@@ -148,13 +148,13 @@ export function AboutPage() {
     <PageFrame
       eyebrow="Independent Comparison"
       title="Empowering decisions through transparent data."
-      description="CompareGrid is an independent consumer comparison and interactive financial & tech calculator platform."
+      description="WiseGrid is an independent consumer comparison and interactive financial & tech calculator platform."
     >
       <div className="page-grid">
         <div className="content-card">
           <h2>Our Core Mission</h2>
           <p>
-            Much like NerdWallet, Bankrate, and CNET, CompareGrid was created to demystify commercial pricing, financial fees, and service costs. We bring objective calculators and side-by-side benchmarks directly to consumers and business decision-makers.
+            Much like NerdWallet, Bankrate, and CNET, WiseGrid was created to demystify commercial pricing, financial fees, and service costs. We bring objective calculators and side-by-side benchmarks directly to consumers and business decision-makers.
           </p>
           <div className="trust-list">
             <div><Check size={17} /> 100% Independent editorial perspective</div>

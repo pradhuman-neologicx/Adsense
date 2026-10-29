@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback } from 'react'
 
 export type Region = 'US' | 'IN'
 
-export const REGION_STORAGE_KEY = 'comparegrid_region_preference'
-const REGION_EVENT = 'comparegrid_region_changed'
+export const REGION_STORAGE_KEY = 'wisegrid_region_preference'
+const REGION_EVENT = 'wisegrid_region_changed'
 
 /**
  * Synchronous client-side heuristic detection:
@@ -18,7 +18,7 @@ export function detectClientRegion(): Region {
   if (typeof window === 'undefined') return 'IN'
 
   try {
-    const saved = localStorage.getItem(REGION_STORAGE_KEY)
+    const saved = localStorage.getItem(REGION_STORAGE_KEY) || localStorage.getItem('comparegrid_region_preference')
     if (saved === 'IN' || saved === 'US') {
       return saved
     }

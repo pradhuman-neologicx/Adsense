@@ -77,7 +77,7 @@ export function Navbar({
           <div className="brand-mark-icon">
             <BarChart3 size={17} strokeWidth={2.4} />
           </div>
-          <span>Compare<span className="brand-dot">.</span>Grid</span>
+          <span>Wise<span className="brand-dot">.</span>Grid</span>
         </Link>
 
         {/* Desktop Hub Navigation */}
@@ -167,7 +167,7 @@ export function Navbar({
 
           <div className="mobile-sub-list">
             <Link className="mobile-sub-link" href="/articles" onClick={() => setMobileOpen(false)}>Articles &amp; Guides</Link>
-            <Link className="mobile-sub-link" href="/about" onClick={() => setMobileOpen(false)}>About CompareGrid</Link>
+            <Link className="mobile-sub-link" href="/about" onClick={() => setMobileOpen(false)}>About WiseGrid</Link>
             <Link className="mobile-sub-link" href="/contact" onClick={() => setMobileOpen(false)}>Contact Advisors</Link>
             <Link className="mobile-sub-link" href="/disclaimer" onClick={() => setMobileOpen(false)}>Policy Disclaimer</Link>
           </div>
