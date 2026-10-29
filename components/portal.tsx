@@ -139,11 +139,11 @@ function PortalInner() {
 
       {/* ── Dynamic AdSense Safe Campaign Filter Pill Bar ── */}
       <div className="campaign-bar-wrapper">
-        <div className="campaign-bar-inner">
+        <div className="campaign-bar-inner max-w-7xl mx-auto">
           <span className="campaign-bar-label">
             <Sparkles size={13} /> Trending Comparisons:
           </span>
-          <div className="campaign-pills">
+          <div className="campaign-pills flex-wrap">
             {campaignPills.map(pill => {
               const isActive =
                 (pill.brand === '' && !activeBrand && activeHub === pill.hub) ||
