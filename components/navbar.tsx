@@ -73,11 +73,12 @@ export function Navbar({
     <header className="site-header">
       <div className="header-inner">
         {/* Logo */}
-        <Link href="/" className="brand-mark">
-          <div className="brand-mark-icon">
-            <BarChart3 size={17} strokeWidth={2.4} />
-          </div>
-          <span>Wise<span className="brand-dot">.</span>Grid</span>
+        <Link href="/" className="brand-logo-link" aria-label="WiseGrid Home">
+          <img
+            src="/logo.png"
+            alt="WiseGrid"
+            className="brand-logo-img"
+          />
         </Link>
 
         {/* Desktop Hub Navigation */}

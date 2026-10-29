@@ -60,6 +60,9 @@ button { cursor: pointer; }
 .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 
 /* Brand */
+.brand-logo-link { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.brand-logo-img { height: 34px; width: auto; max-width: 180px; object-fit: contain; display: block; transition: opacity .15s ease; }
+.brand-logo-link:hover .brand-logo-img { opacity: 0.88; }
 .brand-mark { display: inline-flex; align-items: center; gap: 10px; color: var(--foreground); font-weight: 800; letter-spacing: -.03em; font-size: 19px; white-space: nowrap; text-decoration: none; flex-shrink: 0; }
 .brand-mark svg { color: #fff; }
 .brand-dot { color: var(--brand); }
@@ -400,6 +403,7 @@ button { cursor: pointer; }
   .check-grid { grid-template-columns: repeat(2, 1fr); }
   .quality-grid { grid-template-columns: 1fr; }
   .header-inner { padding: 0 16px; height: 62px; }
+  .brand-logo-img { height: 28px; max-width: 140px; }
   .calculator-card, .tool-panel { padding: 20px; }
   .modal-row-2 { grid-template-columns: 1fr; }
   .eligibility-grid { grid-template-columns: 1fr; }

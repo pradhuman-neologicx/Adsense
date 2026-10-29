@@ -26,11 +26,13 @@ export function Footer({ showDisclaimerBanner = true }: FooterProps) {
       {/* ── Site Footer ── */}
       <footer className="site-footer">
         <div className="footer-brand">
-          <Link href="/" className="brand-mark">
-            <div className="brand-mark-icon">
-              <BarChart3 size={16} strokeWidth={2.4} />
-            </div>
-            <span>Wise<span className="brand-dot">.</span>Grid</span>
+          <Link href="/" className="brand-logo-link" aria-label="WiseGrid Home">
+            <img
+              src="/logo.png"
+              alt="WiseGrid"
+              className="brand-logo-img"
+              style={{ height: '32px' }}
+            />
           </Link>
           <p>
             Independent consumer comparison &amp; interactive financial, tech, and home calculators for the United States &amp; India.
