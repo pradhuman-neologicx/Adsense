@@ -7,9 +7,9 @@ import { ChevronDown, Sparkles } from 'lucide-react'
 import { Navbar, navHubs, NavHubId } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { LeadModal } from '@/components/lead-modal'
+import { useRegion, type Region } from '@/lib/region'
 
 type HubId = NavHubId
-type Region = 'US' | 'IN'
 
 const brandToHub: Record<string, HubId> = {
   citi: 'banking',
@@ -67,6 +67,7 @@ function PortalInner() {
   const searchParams = useSearchParams()
   const hubParam = searchParams.get('hub') as HubId | null
   const brandParam = searchParams.get('brand') || searchParams.get('keyword')
+  const regionParam = searchParams.get('region') || searchParams.get('country')
 
   // Resolve initial hub based on URL params
   const resolveInitialHub = (): HubId => {
@@ -80,7 +81,7 @@ function PortalInner() {
     return 'banking'
   }
 
-  const [region, setRegion] = useState<Region>('IN')
+  const { region, setRegion } = useRegion()
   const [activeHub, setActiveHub] = useState<HubId>(resolveInitialHub)
   const [activeBrand, setActiveBrand] = useState<string | null>(brandParam)
   const [modal, setModal] = useState<{ hubType: string; value: number; brand?: string; keyword?: string } | null>(null)
@@ -99,7 +100,14 @@ function PortalInner() {
       }
     }
     if (brandParam) setActiveBrand(brandParam)
-  }, [hubParam, brandParam])
+
+    if (regionParam) {
+      const upper = regionParam.toUpperCase()
+      if (upper === 'US' || upper === 'IN') {
+        setRegion(upper as Region)
+      }
+    }
+  }, [hubParam, brandParam, regionParam, setRegion])
 
   function openLead(hubType: string, value: number, brand?: string) {
     setModal({

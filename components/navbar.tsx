@@ -14,6 +14,7 @@ import {
   Menu,
   X,
 } from 'lucide-react'
+import { useRegion, type Region } from '@/lib/region'
 
 export const navHubs = [
   { id: 'banking', label: 'Banking', icon: CreditCard },
@@ -25,22 +26,27 @@ export const navHubs = [
 export type NavHubId = (typeof navHubs)[number]['id']
 
 interface NavbarProps {
-  region?: 'US' | 'IN'
-  setRegion?: (region: 'US' | 'IN') => void
+  region?: Region
+  setRegion?: (region: Region) => void
   activeHub?: string
   onSelectHub?: (hubId: NavHubId) => void
   onOpenLead?: (hubType: string, value: number, brand?: string) => void
 }
 
 export function Navbar({
-  region = 'IN',
-  setRegion,
+  region: propRegion,
+  setRegion: propSetRegion,
   activeHub = 'banking',
   onSelectHub,
   onOpenLead,
 }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const router = useRouter()
+
+  // Use the global/persisted auto-detecting region hook
+  const { region: hookRegion, setRegion: hookSetRegion } = useRegion(propRegion)
+  const currentRegion: Region = propRegion || hookRegion
+  const handleSetRegion = propSetRegion || hookSetRegion
 
   const handleHubClick = (hubId: NavHubId) => {
     if (onSelectHub) {
@@ -60,9 +66,7 @@ export function Navbar({
   }
 
   const toggleRegion = () => {
-    if (setRegion) {
-      setRegion(region === 'US' ? 'IN' : 'US')
-    }
+    handleSetRegion(currentRegion === 'US' ? 'IN' : 'US')
   }
 
   return (
@@ -106,20 +110,18 @@ export function Navbar({
 
         {/* Right Header Actions */}
         <div className="header-actions">
-          {/* Region Switcher */}
-          {setRegion && (
-            <button
-              type="button"
-              className="region-pill"
-              onClick={toggleRegion}
-              title={`Currently showing ${region === 'US' ? 'United States ($ USD)' : 'India (₹ INR)'}. Click to switch.`}
-              aria-label="Switch Currency & Region"
-            >
-              <Globe size={13} className="globe-icon" />
-              <span className={`region-opt${region === 'US' ? ' active' : ''}`}>$ USD</span>
-              <span className={`region-opt${region === 'IN' ? ' active' : ''}`}>₹ INR</span>
-            </button>
-          )}
+          {/* Region Switcher (Always available & auto-detecting) */}
+          <button
+            type="button"
+            className="region-pill"
+            onClick={toggleRegion}
+            title={`Currently showing ${currentRegion === 'US' ? 'United States ($ USD)' : 'India (₹ INR)'}. Click to switch.`}
+            aria-label="Switch Currency & Region"
+          >
+            <Globe size={13} className="globe-icon" />
+            <span className={`region-opt${currentRegion === 'US' ? ' active' : ''}`}>$ USD</span>
+            <span className={`region-opt${currentRegion === 'IN' ? ' active' : ''}`}>₹ INR</span>
+          </button>
 
           {/* CTA Button */}
           <button
